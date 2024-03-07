@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Recipes</h2>
+    <ul>
+        {% for recipe in recipes %}
+            <li>{{ recipe.title }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Add a New Recipe</h3>
+    <form method="POST" action="{{ url_for('recipes') }}">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.title.label }} {{ form.title() }}
+        </div>
+        <div>
+            {{ form.ingredients.label }} {{ form.ingredients(rows=5) }}
+        </div>
+        <div>
+            {{ form.instructions.label }} {{ form.instructions(rows=5) }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+{% endblock %}
