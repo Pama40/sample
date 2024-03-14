@@ -28,13 +28,20 @@
             </li>
         </ul>
         <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('login') }}">Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ url_for('register') }}">Register</a>
-            </li>
-        </ul>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('choose_option') }}">Choose Option</a>
+    </li>
+</ul>
+
       </div>
     </nav>
       {% with messages = get_flashed_messages(with_categories=true) %}
