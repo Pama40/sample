@@ -41,18 +41,21 @@ def register():
     return render_template('register.html', form=form)
 
 @app.route('/welcome')
-@login_required
+#@login_required
 def welcome():
     return render_template('welcome.html')
+@app.route('/diet')
+def diet():
+    return render_template('dietary_control.html')
 
 @app.route('/generate_recipe', methods=['GET', 'POST'])
-@login_required
+#@login_required
 def generate_recipe():
     # Your code to handle generating recipes from ingredients
     return render_template('generate_recipe.html')
 
 @app.route('/profile')
-@login_required
+#@login_required add this
 def profile():
     # Logic to fetch and display user profile information
     return render_template('profile.html')

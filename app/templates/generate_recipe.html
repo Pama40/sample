@@ -4,7 +4,22 @@
 
 {% block content %}
 <div class="container">
-    <h2>Generate Recipe</h2>
-    <!-- Your form to input ingredients and generate recipe goes here -->
+    <h2>Generated Recipes</h2>
+
+    <!-- Loop to display recipes in three rows -->
+    {% for i in range(0, 10, 3) %}
+    <div class="row">
+        {% for j in range(i, i + 3) %}
+        {% if j < 10 %}
+        <div class="col-md-4">
+            <h3>Recipe {{ j + 1 }}</h3>
+            <img src="https://via.placeholder.com/150" alt="Recipe Image" class="img-fluid">
+            <p>Description of recipe {{ j + 1 }}</p>
+            <a href="#">Read more</a>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endfor %}
 </div>
 {% endblock %}

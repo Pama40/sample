@@ -1,6 +1,61 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Welcome to Recipe Generator & Dietary Control</h1>
-    <p>Explore recipes and manage your dietary preferences.</p>
+    <style>
+        .background-image {
+            background-image: url('https://assets.website-files.com/63d259e16c0b78fc948717a8/63fa39918bb3697045065d0e_Main%20Chopping%20Board%20Green%20Drop.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 99vh; /* Adjust the height as needed */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color:black; /* Optional: Add text color to make text readable */
+            text-align: center; /* Center align text */
+            padding: 50px; /* Add padding to the container */
+        }
+
+        .info-blocks {
+            display: flex; /* Display info blocks in a row */
+            justify-content: space-around; /* Align info blocks with space between */
+            flex-wrap: wrap; /* Wrap to next line if content overflows */
+            max-width: 800px; /* Limit max width of info blocks */
+        }
+
+        .info-block {
+            background-color: rgba(255, 255, 255, 0.8); /* Add semi-transparent white background */
+            border-radius: 10px; /* Add rounded corners */
+            padding: 20px; /* Add padding */
+            margin-top: 20px; /* Add margin to separate blocks */
+            flex-basis: 80%; /* Set initial width of info blocks */
+        }
+
+        .info-block h2 {
+            margin-bottom: 10px; /* Add margin below heading */
+        }
+
+        .info-block p {
+            margin-bottom: 20px; /* Add margin below paragraphs */
+        }
+    </style>
+
+    <div class="background-image">
+        <h1>Welcome to Recipe Generator & Dietary Control</h1>
+        <p>Explore recipes and manage your dietary preferences.</p>
+
+        <!-- Info blocks for interesting stuff -->
+        <div class="info-blocks">
+
+
+            <div class="info-block">
+                <h2>HELLO DEAR</h2>
+                <p>Discover helpful tips and tricks for cooking and nutrition.</p>
+                <a href="/welcome" class="btn btn-primary">GET STARTED!</a>
+            </div>
+
+
+        </div>
+    </div>
 {% endblock %}

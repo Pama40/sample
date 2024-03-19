@@ -1,6 +1,48 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>Dietary Control</h2>
-    <p>Manage your dietary preferences here.</p>
+<style>
+    .dietary-control {
+        background-color: #f8f9fa; /* Set background color */
+        padding: 20px; /* Add padding */
+        border-radius: 10px; /* Add rounded corners */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+        text-align: center; /* Center align text */
+    }
+
+    .dietary-control h2 {
+        color: #007bff; /* Set heading color */
+        margin-bottom: 20px; /* Add margin below heading */
+    }
+
+    .dietary-control p {
+        color: #6c757d; /* Set paragraph color */
+        margin-bottom: 20px; /* Add margin below paragraph */
+    }
+
+    .button-group {
+        margin-top: 20px; /* Add margin above button group */
+    }
+
+    .btn {
+        margin: 0 10px; /* Add margin between buttons */
+    }
+</style>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="dietary-control">
+                <h2>Dietary Control</h2>
+                <p>Manage your dietary preferences here.</p>
+
+                <div class="button-group">
+                    <a href="#" class="btn btn-primary">Set Dietary Goals</a>
+                    <a href="#" class="btn btn-secondary">Track Nutritional Intake</a>
+                    <a href="#" class="btn btn-info">Discover Healthy Recipes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
