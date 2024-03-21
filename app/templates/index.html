@@ -2,60 +2,79 @@
 
 {% block content %}
     <style>
+        /* Background image container */
         .background-image {
-            background-image: url('https://assets.website-files.com/63d259e16c0b78fc948717a8/63fa39918bb3697045065d0e_Main%20Chopping%20Board%20Green%20Drop.webp');
+            background-image: url('https://i.pinimg.com/474x/c6/92/be/c692be173d1b36cb473b69947d98702a.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            height: 99vh; /* Adjust the height as needed */
+            height: 100vh; /* Adjust the height to cover the viewport */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            color:black; /* Optional: Add text color to make text readable */
+            color: white; /* Set text color to white for better contrast */
             text-align: center; /* Center align text */
             padding: 50px; /* Add padding to the container */
         }
 
+        /* Info block container */
         .info-blocks {
             display: flex; /* Display info blocks in a row */
-            justify-content: space-around; /* Align info blocks with space between */
+            justify-content: center; /* Center align info blocks horizontally */
+            align-items: center; /* Center align info blocks vertically */
             flex-wrap: wrap; /* Wrap to next line if content overflows */
             max-width: 800px; /* Limit max width of info blocks */
+            margin-top: 50px; /* Add margin to separate from background */
         }
 
+        /* Individual info block */
         .info-block {
-            background-color: rgba(255, 255, 255, 0.8); /* Add semi-transparent white background */
+            background-color: rgba(0, 0, 0, 0.7); /* Add semi-transparent black background */
             border-radius: 10px; /* Add rounded corners */
             padding: 20px; /* Add padding */
-            margin-top: 20px; /* Add margin to separate blocks */
-            flex-basis: 80%; /* Set initial width of info blocks */
+            margin: 20px; /* Add margin to separate blocks */
+            width: 300px; /* Set fixed width for each block */
         }
 
-        .info-block h2 {
-            margin-bottom: 10px; /* Add margin below heading */
+        /* Title style */
+        h1 {
+            font-size: 3rem; /* Increase font size for title */
+            margin-bottom: 20px; /* Add margin below title */
         }
 
-        .info-block p {
-            margin-bottom: 20px; /* Add margin below paragraphs */
+        /* Subtitle style */
+        p {
+            font-size: 1.5rem; /* Increase font size for subtitle */
+            margin-bottom: 30px; /* Add margin below subtitle */
+        }
+
+        /* Button style */
+        .btn {
+            font-size: 1.2rem; /* Increase font size for buttons */
         }
     </style>
 
+    <!-- Background image container -->
     <div class="background-image">
         <h1>Welcome to Recipe Generator & Dietary Control</h1>
         <p>Explore recipes and manage your dietary preferences.</p>
 
-        <!-- Info blocks for interesting stuff -->
+        <!-- Info blocks container -->
         <div class="info-blocks">
-
-
+            <!-- Info block 1 -->
             <div class="info-block">
-                <h2>HELLO DEAR</h2>
-                <p>Discover helpful tips and tricks for cooking and nutrition.</p>
-                <a href="/welcome" class="btn btn-primary">GET STARTED!</a>
+                <h2>Discover Recipes</h2>
+                <p>Explore a variety of recipes tailored to your preferences.</p>
+                <a href="/welcome" class="btn btn-primary">Get Started!</a>
             </div>
 
-
+            <!-- Info block 2 -->
+            <div class="info-block">
+                <h2>Dietary Control</h2>
+                <p>Manage your dietary requirements and track your nutrition.</p>
+                <a href="/diet" class="btn btn-primary">Learn More</a>
+            </div>
         </div>
     </div>
 {% endblock %}

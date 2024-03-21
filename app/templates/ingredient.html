@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Welcome
+{% endblock %}
+
+{% block content %}
+<!-- Navigation Bar -->
+
+
+<div class="container">
+    <h1>Recipe Generator</h1>
+    <p>Enter ingredients below to generate recipes:</p>
+    <form id="recipeForm">
+        <label for="ingredients">Ingredients:</label><br>
+        <textarea id="ingredients" name="ingredients" rows="6" column="15" placeholder="Enter ingredients here..." required></textarea><br>
+        <button type="submit" href="{{url_for('generate_recipe')}}">Generate Recipes</button>
+    </form>
+
+    <!-- Placeholder for displaying generated recipes -->
+    <div id="recipeResults">
+        <!-- Recipes will be displayed here -->
+    </div>
+</div>
+
+<!-- JavaScript to handle form submission and display results -->
+<script>
+    document.getElementById("recipeForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Get the ingredients input value
+        let ingredients = document.getElementById("ingredients").value;
+
+        // Example: Send ingredients to a backend server for recipe generation
+        // Replace this with your actual backend endpoint
+        fetch('/generate-recipes', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ ingredients: ingredients }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Handle the generated recipes
+            displayRecipes(data.recipes);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+    });
+
+    // Function to display generated recipes
+    function displayRecipes(recipes) {
+        let recipeResults = document.getElementById("recipeResults");
+        recipeResults.innerHTML = ""; // Clear previous results
+
+        if (recipes.length === 0) {
+            recipeResults.innerHTML = "<p>No recipes found for the provided ingredients.</p>";
+        } else {
+            let recipeList = "<h2>Generated Recipes:</h2><ul>";
+            recipes.forEach(recipe => {
+                recipeList += "<li>" + recipe + "</li>";
+            });
+            recipeList += "</ul>";
+            recipeResults.innerHTML = recipeList;
+        }
+    }
+</script>
+{% endblock %}

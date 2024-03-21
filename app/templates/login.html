@@ -11,7 +11,7 @@
     <div class="form-group">
         {{ form.password.label }} {{ form.password(class="form-control") }}
     </div>
-    <button type="submit" class="btn btn-primary">Login</button>
+    <button type="submit" class="btn btn-primary" href="{{url_for('welcome')}}">Login</button>
 </form>
 
          <p>Don't have an account? <a href="{{ url_for('register') }}">Register here</a>.</p>

@@ -25,7 +25,6 @@ Welcome
         padding: 20px; /* Padding */
         margin-bottom: 20px; /* Bottom margin */
         transition: transform 0.3s; /* Add transition effect for smoother hover */
-        color: white; /* Set text color to white */
     }
 
     .meal-block:hover {
@@ -55,25 +54,31 @@ Welcome
 </style>
 
 <div class="container">
-    <h2>Welcome, {{ current_user.username }}!</h2>
+    <h2>HI! What are you looking for?</h2>
 
     <!-- Meal blocks -->
     <div class="row">
         <div class="col-md-4">
             <div class="meal-block">
-                <h3>GENERATE RECIPES</h3>
-                <p>Are you confused with your ingredients?</p>
-                <a href="{{url_for('ingredient')}}" class="btn btn-light">RECIPIES <i class="fas fa-arrow-right"></i></a>
+                <h3>Breakfast</h3>
+                <p>Choose from a variety of healthy breakfast options.</p>
+                <a href="" class="btn btn-light">Explore <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
         <div class="col-md-4">
             <div class="meal-block">
-                <h3>DIET CONTROLLER</h3>
-                <p>Worried about your diet? Take a look.</p>
-                <a href="{{url_for('option')}}" class="btn btn-light">Explore <i class="fas fa-arrow-right"></i></a>
+                <h3>Lunch</h3>
+                <p>Delicious and nutritious lunch ideas await you.</p>
+                <a href="" class="btn btn-light">Explore <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
-
+        <div class="col-md-4">
+            <div class="meal-block">
+                <h3>Dinner</h3>
+                <p>Discover satisfying dinner recipes for any occasion.</p>
+                <a href="" class="btn btn-light">Explore <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
     </div>
 </div>
 
